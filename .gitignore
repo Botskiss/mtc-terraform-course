@@ -1,3 +1,5 @@
+# Cloned git directories
+**/mtc-*
 # Local .terraform directories
 **/.terraform/*
 

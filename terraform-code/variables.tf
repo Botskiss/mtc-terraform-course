@@ -1,10 +1,10 @@
-variable "repo_count" {
+variable "repo_max" {
   type        = number
   description = "Number or repositories."
-  default     = 1
+  default     = 2
 
   validation {
-    condition     = var.repo_count < 5
+    condition     = var.repo_max <= 10
     error_message = "Do no deploy more than 5 repositories."
   }
 
@@ -19,7 +19,14 @@ variable "env" {
   }
 }
 
-
+variable "repos" {
+  type        = map(map(string))
+  description = "Repositories"
+  validation {
+    condition     = length(var.repos) <= var.repo_max
+    error_message = "Please do not deploy more than the maximum allowed."
+  }
+}
 
 
 
