@@ -1,5 +1,6 @@
 variable "repo_name" {
   description = "Name of the repo that needs a key"
+  type = string
 }
 
 resource "tls_private_key" "this" {
@@ -15,7 +16,7 @@ resource "github_repository_deploy_key" "this" {
 
 resource "local_file" "this" {
   content  = tls_private_key.this.private_key_openssh
-  filename = "$(path.cwd)/$(github_repository_deploy_key.this.title).pem"
+  filename = "${path.cwd}/${github_repository_deploy_key.this.title}.pem"
 
   provisioner "local-exec" {
   when     = destroy
