@@ -19,9 +19,14 @@ module "repos" {
   for_each = local.environments
   repo_max = 9
   env      = each.key
-  repos = local.repos
+  repos    = local.repos
+}
+
+module "deploy-key" {
+  source    = "./modules/deploy-key"
+  repo_name = "mtc-infra-dev"
 }
 
 output "repo-info" {
-  value= { for k,v in module.repos : k => v.clone-urls }
+  value = { for k, v in module.repos : k => v.clone-urls }
 }
