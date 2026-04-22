@@ -14,6 +14,12 @@ resource "github_repository" "this" {
   }
 }
 
+data "github_user" "current" {
+  username = ""  
+}
+
+resource "time_static" "this" {}
+
 resource "github_repository_file" "this" {
   repository          = github_repository.this.name
   branch              = "main"
@@ -22,7 +28,7 @@ resource "github_repository_file" "this" {
   content = templatefile("${path.module}/templates/index.tftpl", {
     avatar = data.github_user.current.avatar_url,
     name   = data.github_user.current.name,
-    date   = "2026"
+    date   = time_static.this.year 
 
   })
 }
