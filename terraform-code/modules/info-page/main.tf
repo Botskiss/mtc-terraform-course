@@ -1,5 +1,5 @@
 resource "github_repository" "this" {
-  name        = "mtc_info_page"
+  name        = "mtc_info_page_2"
   description = "Repository Information for MTC"
   visibility  = "public"
   auto_init   = true
