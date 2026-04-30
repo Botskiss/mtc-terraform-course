@@ -1,6 +1,6 @@
 variable "repo_name" {
   description = "Name of the repo that needs a key"
-  type = string
+  type        = string
 }
 
 resource "tls_private_key" "this" {
@@ -19,8 +19,8 @@ resource "local_file" "this" {
   filename = "${path.cwd}/${github_repository_deploy_key.this.title}.pem"
 
   provisioner "local-exec" {
-  when     = destroy
-  command  = "rm -f ${self.filename}"
+    when    = destroy
+    command = "rm -f ${self.filename}"
   }
 }
 

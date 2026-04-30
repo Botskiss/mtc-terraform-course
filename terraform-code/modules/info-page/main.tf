@@ -15,7 +15,7 @@ resource "github_repository" "this" {
 }
 
 data "github_user" "current" {
-  username = ""  
+  username = ""
 }
 
 resource "time_static" "this" {}
@@ -28,8 +28,12 @@ resource "github_repository_file" "this" {
   content = templatefile("${path.module}/templates/index.tftpl", {
     avatar = data.github_user.current.avatar_url,
     name   = data.github_user.current.name,
-    date   = time_static.this.year 
-
+    date   = time_static.this.year,
+    repos  = var.repos
   })
+}
+
+variable "repos" {
+  type = map(any)
 }
 

@@ -1,15 +1,15 @@
 repo_max = 4
-env = "prod"
+env      = "prod"
 repos = {
   infra = {
     lang     = "terraform",
     filename = "main.tf"
-    pages = true
+    pages    = true
   },
   backend = {
     lang     = "python",
     filename = "main.py"
-    pages = false
+    pages    = false
   }
 }
 
