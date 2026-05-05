@@ -1,5 +1,5 @@
 resource "github_repository" "this" {
-  name        = "mtc_info_page_2"
+  name        = "mtc_info_page"
   description = "Repository Information for MTC"
   visibility  = "public"
   auto_init   = true
@@ -10,7 +10,7 @@ resource "github_repository" "this" {
     }
   }
   provisioner "local-exec" {
-    command = "gh repo view ${self.name} --web"
+    command = var.run_provisioners ? "gh repo view ${self.name} --web" : "echo 'skip repo view'"
   }
 }
 
@@ -33,7 +33,4 @@ resource "github_repository_file" "this" {
   })
 }
 
-variable "repos" {
-  type = map(any)
-}
 
