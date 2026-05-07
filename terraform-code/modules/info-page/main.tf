@@ -1,7 +1,7 @@
 data "terraform_remote_state" "repos" {
   backend = "remote"
   config = {
-    organization = "mtc-tf-2026"
+    organization = "botskiss-terraform"
     workspaces = {
       name = "mtc-repos"
     }
