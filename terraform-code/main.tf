@@ -1,11 +1,15 @@
-
+resource "local_file" "repos" {
+  content  = jsonencode(local.repos)
+  filename = "${path.module}/repos.json"
+}
 
 module "repos" {
   source           = "./modules/dev-repos"
   for_each         = var.environments
   repo_max         = 9
   env              = each.key
-  repos            = local.repos
+  # repos            = jsondecode(file("repos.json"))
+  repos = { for v in csvdecode(file("repos.csv")) : v["environment"] => {for x, y in v : x => lower(y)} }
   run_provisioners = false
 }
 
@@ -20,11 +24,6 @@ module "info-page" {
   repos            = { for k, v in module.repos["prod"].clone-urls : k => v }
   run_provisioners = false
 }
-
-
-# output "repo-info" {
-#   value = { for k, v in module.repos : k => v.clone-urls }
-# }
 
 
 output "repo-list" {

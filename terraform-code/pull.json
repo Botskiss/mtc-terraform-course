@@ -1,0 +1,693 @@
+{
+  "version": 4,
+  "terraform_version": "1.11.3",
+  "serial": 1,
+  "lineage": "2026c553-6f7c-cbb9-c96d-dba13bd74007",
+  "outputs": {
+    "repo-list": {
+      "value": [
+        "mtc-infra-dev"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string"
+        ]
+      ]
+    }
+  },
+  "resources": [
+    {
+      "module": "module.info-page",
+      "mode": "data",
+      "type": "github_user",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/182822941?v=4",
+            "bio": "",
+            "blog": "",
+            "company": "",
+            "created_at": "2024-09-25 21:30:50 +0000 UTC",
+            "email": "alfredomilad@yahoo.com",
+            "followers": 0,
+            "following": 1,
+            "gpg_keys": [],
+            "gravatar_id": "",
+            "id": "182822941",
+            "location": "",
+            "login": "Botskiss",
+            "name": "Alfredo Milad",
+            "node_id": "U_kgDOCuWoHQ",
+            "public_gists": 0,
+            "public_repos": 5,
+            "site_admin": false,
+            "ssh_keys": [],
+            "suspended_at": "0001-01-01 00:00:00 +0000 UTC",
+            "updated_at": "2026-04-22 09:07:39 +0000 UTC",
+            "username": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.info-page",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "Repository Information for MTC",
+            "etag": "W/\"46ce0384e5bb4c0d1d96a77b849e9b188773c366f4a7eaeebcf4550416a281e8\"",
+            "full_name": "Botskiss/mtc_info_page",
+            "git_clone_url": "git://github.com/Botskiss/mtc_info_page.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/Botskiss/mtc_info_page",
+            "http_clone_url": "https://github.com/Botskiss/mtc_info_page.git",
+            "id": "mtc_info_page",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "mtc_info_page",
+            "node_id": "R_kgDOSUwQHA",
+            "pages": [
+              {
+                "build_type": "legacy",
+                "cname": "",
+                "custom_404": false,
+                "html_url": "https://botskiss.github.io/mtc_info_page/",
+                "source": [
+                  {
+                    "branch": "main",
+                    "path": "/"
+                  }
+                ],
+                "status": "building",
+                "url": "https://api.github.com/repos/Botskiss/mtc_info_page/pages"
+              }
+            ],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 1229721628,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "enabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "enabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:Botskiss/mtc_info_page.git",
+            "svn_url": "https://github.com/Botskiss/mtc_info_page",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.info-page",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add index.md",
+            "commit_sha": "191fe9a85dcc06fe6a292c6b7dccb7ac96166d9a",
+            "content": "# Portfolio\n\n## About Me\n\n<img src=\"https://avatars.githubusercontent.com/u/182822941?v=4\"  style=\"width: 10%; height: auto;\">\n\nHi, I'm Alfredo Milad. Check out my repos!\n\n## Projects\n\n| Project Name          | Web Page                                                      | Link                                                         |\n|-----------------------|---------------------------------------------------------------|--------------------------------------------------------------|\n| mtc-infra-prod        | [Webpage](https://botskiss.github.io/mtc-infra-prod/)         | [GitHub](https://github.com/Botskiss/mtc-infra-prod.git)         |\n\n----\n\n@ 2026 Alfredo Milad",
+            "file": "index.md",
+            "id": "mtc_info_page/index.md",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc_info_page",
+            "sha": "bfb4612be637f42e762fc035f1bcaf4aa5f7f963"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.info-page.data.github_user.current",
+            "module.info-page.github_repository.this",
+            "module.info-page.time_static.this",
+            "module.repos.github_repository.mtc_repo"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.info-page",
+      "mode": "managed",
+      "type": "time_static",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/time\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "day": 5,
+            "hour": 10,
+            "id": "2026-05-05T10:18:19Z",
+            "minute": 18,
+            "month": 5,
+            "rfc3339": "2026-05-05T10:18:19Z",
+            "second": 19,
+            "triggers": null,
+            "unix": 1777976299,
+            "year": 2026
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "data",
+      "type": "github_user",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/182822941?v=4",
+            "bio": "",
+            "blog": "",
+            "company": "",
+            "created_at": "2024-09-25 21:30:50 +0000 UTC",
+            "email": "alfredomilad@yahoo.com",
+            "followers": 0,
+            "following": 1,
+            "gpg_keys": [],
+            "gravatar_id": "",
+            "id": "182822941",
+            "location": "",
+            "login": "Botskiss",
+            "name": "Alfredo Milad",
+            "node_id": "U_kgDOCuWoHQ",
+            "public_gists": 0,
+            "public_repos": 5,
+            "site_admin": false,
+            "ssh_keys": [],
+            "suspended_at": "0001-01-01 00:00:00 +0000 UTC",
+            "updated_at": "2026-04-22 09:07:39 +0000 UTC",
+            "username": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "mtc_repo",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "terraform Code for MTC",
+            "etag": "W/\"0c6ce0fcfc5fa4dde1a2f8546b5192978c2da6b458cb99cd7a4c6a3d7828843e\"",
+            "full_name": "Botskiss/mtc-infra-dev",
+            "git_clone_url": "git://github.com/Botskiss/mtc-infra-dev.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/Botskiss/mtc-infra-dev",
+            "http_clone_url": "https://github.com/Botskiss/mtc-infra-dev.git",
+            "id": "mtc-infra-dev",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "mtc-infra-dev",
+            "node_id": "R_kgDOSUwP7Q",
+            "pages": [
+              {
+                "build_type": "legacy",
+                "cname": "",
+                "custom_404": false,
+                "html_url": "https://botskiss.github.io/mtc-infra-dev/",
+                "source": [
+                  {
+                    "branch": "main",
+                    "path": "/"
+                  }
+                ],
+                "status": "building",
+                "url": "https://api.github.com/repos/Botskiss/mtc-infra-dev/pages"
+              }
+            ],
+            "primary_language": "",
+            "private": true,
+            "repo_id": 1229721581,
+            "security_and_analysis": [],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:Botskiss/mtc-infra-dev.git",
+            "svn_url": "https://github.com/Botskiss/mtc-infra-dev",
+            "template": [],
+            "topics": [],
+            "visibility": "private",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add main.tf",
+            "commit_sha": "1b5f9bf222490869098242d423eeb96aa50d2524",
+            "content": "# Hello terraform",
+            "file": "main.tf",
+            "id": "mtc-infra-dev/main.tf",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-dev",
+            "sha": "ecf53310d4c11a779b64983042dbb8084ec792e7"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.github_repository.mtc_repo"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "readme",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add README.md",
+            "commit_sha": "55e27d4112c0bfbd4dd05e0b0b2c90e6d1a0b3e6",
+            "content": "# This a dev terraform repository is for infra developers.\nThe infra was last modified by: Alfredo Milad\n",
+            "file": "README.md",
+            "id": "mtc-infra-dev/README.md",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-dev",
+            "sha": "8c21f1e50a8199d2f5eb8972f4f22454730d0051"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc_repo"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "terraform_data",
+      "name": "repo-clone",
+      "provider": "provider[\"terraform.io/builtin/terraform\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "id": "7f301b47-e9fd-a4ae-9764-e911147a064a",
+            "input": null,
+            "output": null,
+            "triggers_replace": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc_repo",
+            "module.repos.github_repository_file.main",
+            "module.repos.github_repository_file.readme"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "data",
+      "type": "github_user",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/182822941?v=4",
+            "bio": "",
+            "blog": "",
+            "company": "",
+            "created_at": "2024-09-25 21:30:50 +0000 UTC",
+            "email": "alfredomilad@yahoo.com",
+            "followers": 0,
+            "following": 1,
+            "gpg_keys": [],
+            "gravatar_id": "",
+            "id": "182822941",
+            "location": "",
+            "login": "Botskiss",
+            "name": "Alfredo Milad",
+            "node_id": "U_kgDOCuWoHQ",
+            "public_gists": 0,
+            "public_repos": 5,
+            "site_admin": false,
+            "ssh_keys": [],
+            "suspended_at": "0001-01-01 00:00:00 +0000 UTC",
+            "updated_at": "2026-04-22 09:07:39 +0000 UTC",
+            "username": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "mtc_repo",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "terraform Code for MTC",
+            "etag": "W/\"7d97049d860d4bdbe410d44f61e7639fda3eb3793d4879c3328bf814a36fcbab\"",
+            "full_name": "Botskiss/mtc-infra-prod",
+            "git_clone_url": "git://github.com/Botskiss/mtc-infra-prod.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/Botskiss/mtc-infra-prod",
+            "http_clone_url": "https://github.com/Botskiss/mtc-infra-prod.git",
+            "id": "mtc-infra-prod",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "mtc-infra-prod",
+            "node_id": "R_kgDOSUwQWw",
+            "pages": [
+              {
+                "build_type": "legacy",
+                "cname": "",
+                "custom_404": false,
+                "html_url": "https://botskiss.github.io/mtc-infra-prod/",
+                "source": [
+                  {
+                    "branch": "main",
+                    "path": "/"
+                  }
+                ],
+                "status": "building",
+                "url": "https://api.github.com/repos/Botskiss/mtc-infra-prod/pages"
+              }
+            ],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 1229721691,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "enabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "enabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:Botskiss/mtc-infra-prod.git",
+            "svn_url": "https://github.com/Botskiss/mtc-infra-prod",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add main.tf",
+            "commit_sha": "9673161d0d18de18d197b51243d04488bb51ecb1",
+            "content": "# Hello terraform",
+            "file": "main.tf",
+            "id": "mtc-infra-prod/main.tf",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-prod",
+            "sha": "ecf53310d4c11a779b64983042dbb8084ec792e7"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.github_repository.mtc_repo"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "readme",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add README.md",
+            "commit_sha": "926bbb39f858b3538e36b3419fb60b0054a370be",
+            "content": "# This a prod terraform repository is for infra developers.\nThe infra was last modified by: Alfredo Milad\n",
+            "file": "README.md",
+            "id": "mtc-infra-prod/README.md",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-prod",
+            "sha": "dba6e6c64aca1b7c4292cdeda3afefa4c58f2a79"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc_repo"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "terraform_data",
+      "name": "repo-clone",
+      "provider": "provider[\"terraform.io/builtin/terraform\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "id": "396fb7cc-0854-be8f-9c86-e935d8444e8b",
+            "input": null,
+            "output": null,
+            "triggers_replace": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc_repo",
+            "module.repos.github_repository_file.main",
+            "module.repos.github_repository_file.readme"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": [
+    {
+      "object_kind": "var",
+      "config_addr": "module.repos.var.repos",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "module.repos[\"dev\"].var.repos",
+          "status": "pass"
+        },
+        {
+          "object_addr": "module.repos[\"prod\"].var.repos",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "object_kind": "var",
+      "config_addr": "module.repos.var.repo_max",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "module.repos[\"dev\"].var.repo_max",
+          "status": "pass"
+        },
+        {
+          "object_addr": "module.repos[\"prod\"].var.repo_max",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "object_kind": "var",
+      "config_addr": "module.repos.var.env",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "module.repos[\"prod\"].var.env",
+          "status": "pass"
+        },
+        {
+          "object_addr": "module.repos[\"dev\"].var.env",
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}
