@@ -96,3 +96,8 @@ resource "aws_vpc_security_group_ingress_rule" "alb" {
   ip_protocol       = "tcp"
   to_port           = 80
 }
+
+resource "aws_ecs_cluster" "this" {
+  name = "mtc-esc-cluster"
+}
+
