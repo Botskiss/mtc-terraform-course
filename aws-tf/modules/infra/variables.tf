@@ -5,3 +5,8 @@ variable "vpc_cidr" {
 variable "num_subnets" {
   type = number
 }
+
+variable "allowed_ips" {
+  type = set(string)
+}
+
