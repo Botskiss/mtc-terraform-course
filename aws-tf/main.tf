@@ -7,3 +7,8 @@ module "infra" {
   allowed_ips = ["0.0.0.0/0"]
 }
 
+module "app" {
+  source              = "./modules/app"
+  ecr_repository_name = "ui"
+}
+
