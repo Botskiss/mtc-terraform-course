@@ -6,3 +6,6 @@ module "infra" {
   num_subnets = 2
 }
 
+data "aws_availability_zones" "available" {
+  state = "available"
+}
