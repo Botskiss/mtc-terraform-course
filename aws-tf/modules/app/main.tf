@@ -22,10 +22,26 @@ resource "terraform_data" "login" {
 }
 
 resource "terraform_data" "build" {
-  depends_on = [ terraform_data.login ]
+  depends_on = [terraform_data.login]
   provisioner "local-exec" {
     command = <<EOT
     docker build -t ${local.ecr_url} ${path.module}/apps/${var.app_path}
     EOT
   }
 }
+
+resource "terraform_data" "push" {
+  triggers_replace = [
+    var.image_version
+  ]
+  depends_on = [terraform_data.login, terraform_data.build]
+  provisioner "local-exec" {
+    command = <<EOT
+    docker image tag ${local.ecr_url} ${local.ecr_url}:${var.image_version}
+    docker image tag ${local.ecr_url} ${local.ecr_url}:latest
+    docker image push ${local.ecr_url}:${var.image_version}
+    docker image push ${local.ecr_url}:latest
+    EOT
+  }
+}
+
