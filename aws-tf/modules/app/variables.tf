@@ -43,3 +43,12 @@ variable "vpc_id" {
   type = string
 }
 
+variable "alb_listener_arn" {
+  type = string
+}
+
+variable "path_pattern" {
+  type    = string
+  default = "/*"
+}
+
