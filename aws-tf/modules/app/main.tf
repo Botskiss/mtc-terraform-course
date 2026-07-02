@@ -20,3 +20,12 @@ resource "terraform_data" "login" {
     EOT
   }
 }
+
+resource "terraform_data" "build" {
+  depends_on = [ terraform_data.login ]
+  provisioner "local-exec" {
+    command = <<EOT
+    docker build -t ${local.ecr_url} ${path.module}/apps/${var.app_path}
+    EOT
+  }
+}
