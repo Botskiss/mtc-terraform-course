@@ -19,5 +19,6 @@ module "app" {
   subnets               = module.infra.public_subnets
   cluster_arn           = module.infra.cluster_arn
   is_public             = true
+  vpc_id                = module.infra.vpc_id
 }
 

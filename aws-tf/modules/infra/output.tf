@@ -7,11 +7,13 @@ output "app_security_group_id" {
 }
 
 output "public_subnets" {
-  value = [for i in aws_subnets.this : i.id]
+  value = [for i in aws_subnet.this : i.id]
 }
 
 output "cluster_arn" {
   value = aws_ecs_cluster.this.arn
 }
 
-
+output "vpc_id" {
+  value = aws_vpc.this.id
+}

@@ -31,7 +31,7 @@ variable "subnets" {
 }
 
 variable "is_public" {
-  type = bool
+  type    = bool
   default = true
 }
 
@@ -39,4 +39,7 @@ variable "cluster_arn" {
   type = string
 }
 
+variable "vpc_id" {
+  type = string
+}
 
