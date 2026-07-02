@@ -45,3 +45,26 @@ resource "terraform_data" "push" {
   }
 }
 
+resource "aws_ecs_task_definition" "this" {
+  family                   = "${var.app_name}-task"
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  cpu                      = "256"
+  memory                   = "512"
+  execution_role_arn       = var.execution_role_arn
+  container_definitions = jsonencode([
+    {
+      name      = var.app_name
+      image     = "${local.ecr_url}:latest"
+      cpu       = 256
+      memory    = 512
+      essential = true
+      portMappings = [
+        {
+          containerport = var.port
+          hostPort      = var.port
+        }
+      ]
+    }
+  ])
+}
