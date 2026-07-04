@@ -70,7 +70,7 @@ resource "aws_ecs_task_definition" "this" {
 }
 
 resource "aws_ecs_service" "this" {
-  name = "${var.app_name}-service"
+  name            = "${var.app_name}-service"
   cluster         = var.cluster_arn
   task_definition = aws_ecs_task_definition.this.arn
   launch_type     = "FARGATE"
