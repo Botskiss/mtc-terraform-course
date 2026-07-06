@@ -1,4 +1,4 @@
-#terraform {
+# terraform {
 #  cloud {
 
 #   organization = "botskiss-terraform"
@@ -7,7 +7,7 @@
 #   name = "ecs"
 # }
 # }
-#}
+# }
 
 terraform {
   backend "s3" {
