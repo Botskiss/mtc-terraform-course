@@ -52,3 +52,8 @@ variable "path_pattern" {
   default = "/*"
 }
 
+variable "healthcheck_path" {
+  type = string
+  default = "/*"
+}
+
