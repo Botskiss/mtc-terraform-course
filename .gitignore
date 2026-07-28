@@ -1,7 +1,7 @@
 # Cloned git directories
 **/mtc-*
 # Local .terraform directories
-**/.terraform/*
+/.terraform/*
 
 # .tfstate files
 *.tfstate

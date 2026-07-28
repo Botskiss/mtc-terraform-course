@@ -1,0 +1,111 @@
+# Docker Terraform Provider
+
+Manage Docker-hosted resources (such as repositories,
+teams, organization settings, and more) using Terraform.
+
+> [!WARNING]
+> This project is **not** for managing objects in a local docker engine. If you would like to use Terraform to interact with a docker engine, [kreuzwerker/docker](https://registry.terraform.io/providers/kreuzwerker/docker/latest) is a fine provider.
+
+Documentation: https://registry.terraform.io/providers/docker/docker/latest/docs
+
+## Requirements
+
+- [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.1
+- [Go](https://golang.org/doc/install) >= 1.21 (to build the provider plugin)
+
+## Usage
+
+Below is a basic example of how to use the Docker services Terraform provider to create a Docker repository. 
+
+```hcl
+terraform {
+  required_providers {
+    docker = {
+      source  = "docker/docker"
+      version = "~> 0.2"
+    }
+  }
+}
+
+provider "docker" { }
+
+resource "docker_hub_repository" "example" {
+  name        = "example-repo"
+  namespace   = "example-namespace"
+  description = "This is an example Docker repository"
+  private     = true
+}
+```
+
+## Authentication
+
+We have multiple ways to set your Docker credentials.
+
+### Setting credentials
+
+Use `docker login` to [log in to a
+registry](https://docs.docker.com/reference/cli/docker/login/). The `docker` CLI
+will store your credentials securely in your credential store, such as the
+operating system native keychain. The Docker Terraform provider will
+use these credentials automatically.
+
+```
+cat ~/my_password.txt | docker login --username my-username --password-stdin
+```
+
+If you'd like to use a different account for running the provider,
+you can set credentials in the environment. When using an organization access
+token (OAT), set `DOCKER_USERNAME` to the organization name:
+
+```
+export DOCKER_USERNAME=my-username
+export DOCKER_PASSWORD=my-secret-token
+terraform plan ...
+```
+
+### Credential types
+
+You can create a personal access token (PAT) to use as an alternative to your
+password for Docker CLI authentication.
+
+A "Read, Write, & Delete" PAT can be used to create, edit, and 
+manage permissions for Docker Hub repositories.
+
+The advantage of PATs is that they have [many security
+benefits](https://docs.docker.com/security/for-developers/access-tokens/) over
+passwords.
+
+Unfortunately, PATs are limited to managing repositories. If you'd like to use
+this provider to manage organizations and teams, you will need to authenticate
+with a password.
+
+Organization access tokens (OATs) are a separate credential type for
+organization-scoped automation. Authenticate with the organization name as the
+username and the OAT as the password.
+
+OATs can be used with this provider for organization APIs when the token has
+the required permissions for the target API, such as `Member Read`,
+`Member Edit`, `Invite Read`, `Invite Edit`, `Group Read`, and `Group Edit`.
+
+When the provider auto-resolves credentials from Docker's config file, it
+currently prefers Docker Desktop's cached access token before `docker login`
+pull credentials. If you want to force OAT usage, set `DOCKER_USERNAME` and
+`DOCKER_PASSWORD` explicitly or configure them in the provider block.
+
+Organization access tokens are incompatible with Docker Desktop, Image Access
+Management, and Registry Access Management. Use a password or PAT for those
+features.
+
+## Contributing
+
+We welcome contributions to the Docker services Terraform provider, detailed documentation for contributing & building the provider can be found [here](https://github.com/docker/terraform-provider-docker/blob/main/CONTRIBUTING.md)
+
+## Roadmap
+
+Our roadmap is managed through GitHub issues. You can view upcoming features and enhancements, as well as report bugs or request new features, by visiting our [issues page](https://github.com/docker/terraform-provider-docker/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen).
+
+## License
+
+Copyright 2024 Docker, Inc.
+
+Licensed under [the Apache License, Version 2.0](LICENSE).
